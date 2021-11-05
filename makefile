@@ -1,7 +1,10 @@
-run: main.c
-	gcc -o main main.c
+objects = main.c ft_strchr.c ft_isascii.c
+
+
+run: $(objects)
+	gcc -o program $(objects)
 	clear
-	./main
+	./program
 
 clean:
-	rm main
+	rm program

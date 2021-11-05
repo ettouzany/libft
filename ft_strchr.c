@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 17:57:44 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/03 17:58:39 by net-touz         ###   ########.fr       */
+/*   Created: 2021/11/04 16:28:55 by net-touz          #+#    #+#             */
+/*   Updated: 2021/11/04 20:14:37 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+char	*ft_strchr(const char *str, int c)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	while (*str != '\0')
+		if (*str++ == c)
+			return (--str);
+	return (0);
 }
-
-// int main(int argc, char const *argv[])
-// {
-//     int i = 0;
-//     char str[] = "ATest StringZ.\n";
-//     char c;
-//     while (str[i])
-//     {
-//         c = str[i];
-//         putchar(ft_toupper(c));
-//         i++;
-//     }
-//     return 0;
-// }
