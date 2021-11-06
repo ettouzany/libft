@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include <stdio.h>
 
-void	*memset(void *str, int c, size_t n)
+void *ft_memset(void *str, int c, size_t n)
 {
-	while (*str < n)
+	size_t i;
+	char *output;
+
+	i = 0;
+	output = (char *)str;
+	while (i < n)
 	{
-		
-		str++;
+		output[i++] = c;
 	}
-	
+	output[i] = '\0';
+	return str;
 }

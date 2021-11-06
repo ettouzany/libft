@@ -9,11 +9,15 @@
 /*   Updated: 2021/11/04 20:14:37 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-char	*ft_strchr(const char *str, int c)
+char *ft_strchr(const char *str, int c)
 {
-	while (*str != '\0')
-		if (*str++ == c)
-			return (--str);
-	return (0);
+	char *output;
+
+	output = (char *)str;
+	while (*output != '\0')
+		if (*output++ == c)
+			return --output;
+	return (NULL);
 }
