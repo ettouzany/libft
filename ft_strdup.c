@@ -15,12 +15,11 @@ char *ft_strdup(const char *s1)
     {
         return NULL;
     }
-
+    i = 0;
     while (*s1)
     {
         output[i++] = *s1++;
     }
     output[i] = '\0';
-
     return output;
 }

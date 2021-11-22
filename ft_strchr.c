@@ -10,12 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
+#include "libft.h"
 
 char *ft_strchr(const char *str, int c)
 {
 	char *output;
 
 	output = (char *)str;
+	c = (unsigned char)c;
+
+	if (!c)
+		return output + ft_strlen(output);
 	while (*output != '\0')
 		if (*output++ == c)
 			return --output;

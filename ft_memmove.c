@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void *ft_memmove(void *restrict dst, const void *restrict src, size_t n)
+void *ft_memmove(void *dst, const void *src, size_t n)
 {
     char *d = (char *)dst;
     char s[n];
@@ -17,18 +17,18 @@ void *ft_memmove(void *restrict dst, const void *restrict src, size_t n)
         i++;
     }
 
-    while (d[dist_lenght])
-        dist_lenght++;
+    // while (d[dist_lenght])
+    //     dist_lenght++;
 
-    if (dist_lenght > n)
-        return NULL;
+    // if (dist_lenght > n)
+    //     return NULL;
     i = 0;
     while (i < n)
     {
         d[i] = s[i];
         i++;
     }
-    d[i] = '\0';
+    // d[i] = '\0';
     return (void *)dst;
 
     // char *str1 = (char *)s1;

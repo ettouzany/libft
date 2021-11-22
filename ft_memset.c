@@ -23,6 +23,5 @@ void *ft_memset(void *str, int c, size_t n)
 	{
 		output[i++] = c;
 	}
-	output[i] = '\0';
 	return str;
 }

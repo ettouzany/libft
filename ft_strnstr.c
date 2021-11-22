@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stddef.h>
 char *ft_strnstr(const char *s1, const char *s2, size_t n)
 {
     size_t i = 0;
@@ -20,6 +20,8 @@ char *ft_strnstr(const char *s1, const char *s2, size_t n)
         }
         i++;
     }
+    if (!s1[0] && !s2[0])
+        return (char *)s1;
     return NULL;
 }
 

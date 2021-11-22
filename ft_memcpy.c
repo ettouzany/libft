@@ -1,31 +1,22 @@
 #include <stdio.h>
 
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
     char *d = (char *)dst;
     char *s = (char *)src;
 
-    size_t dist_lenght;
-    size_t src_lenght;
     size_t i = 0;
-    dist_lenght = 0;
-    src_lenght = 0;
-    while (s[src_lenght])
-        src_lenght++;
 
-    while (d[dist_lenght])
-        dist_lenght++;
-
-    if (dist_lenght > n)
-        return NULL;
+    // printf("%zu", dist_lenght);
+    // printf("ok");
 
     while (i < n)
     {
         d[i] = s[i];
         i++;
     }
-    d[i] = '\0';
-    return (void *)src;
+    // d[i] = '\0';
+    return (void *)dst;
 
     // char *str1 = (char *)s1;
     // char *str2 = (char *)s2;

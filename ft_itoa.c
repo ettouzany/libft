@@ -34,16 +34,20 @@ char *ft_itoa(int n)
     int i;
 
     is_negative = 0;
+    int is_maxint = 0;
     i = 0;
     if (n < 0)
     {
         is_negative = 1;
+        if (n == -2147483648 && n++)
+            is_maxint = 1;
+
         n *= -1;
         numtobyte = ft_numtobyte(n);
     }
     else
         numtobyte = ft_numtobyte(n);
-    output = malloc(numtobyte + is_negative);
+    output = malloc(numtobyte + is_negative + 1);
     if (!output)
         return NULL;
     if (is_negative)
@@ -51,11 +55,11 @@ char *ft_itoa(int n)
 
     while (n >= 10)
     {
-        printf("%d\n", n);
         output[i++] = n / ft_mypow(numtobyte) + 48;
         n = n % ft_mypow(numtobyte--);
     }
 
-    output[i] = n % 10 + 48;
+    output[i++] = n % 10 + 48 + is_maxint;
+    output[i] = '\0';
     return output;
 }

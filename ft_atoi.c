@@ -9,7 +9,7 @@ int ft_atoi(const char *str)
     out = 0;
     sign = 1;
 
-    while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f' || *str == '\r')
+    while ((*str >= 9 && *str <= 13) || *str == 32 || *str == 0)
         str++;
 
     if (*str == '-' || *str == '+')

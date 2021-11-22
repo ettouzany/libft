@@ -16,11 +16,12 @@ size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
     if (dist_lenght > dstsize)
         return src_lenght + dstsize;
 
-    while (i + dist_lenght + 1 < dstsize)
+    while (i + dist_lenght + 1 < dstsize && src[i])
     {
         dst[dist_lenght + i] = src[i];
         i++;
     }
+
     dst[dist_lenght + i] = '\0';
     return src_lenght + dist_lenght;
 }
