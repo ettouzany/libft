@@ -6,7 +6,7 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 03:28:24 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/23 03:31:01 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:20:23 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-    while (lst->next != NULL)
+    //temp = 
+    while (lst && !lst->next)
     {
         lst = lst->next;
     }

@@ -6,7 +6,7 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 03:31:40 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/23 03:33:46 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:28:05 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,9 @@
 
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
-    ft_lstlast(lst[0])->next = new;
+    while ((*lst))
+    {
+        (*lst) = (*lst)->next;
+    }
+    (*lst) = new;
 }
