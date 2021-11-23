@@ -15,5 +15,5 @@ fclean : clean
 	rm -f ${NAME}
 re : fclean all
 all : ${NAME}
-bonus : ${NAME}${BOFILES}
+bonus : ${NAME} ${BOFILES}
 	ar -cr $^
