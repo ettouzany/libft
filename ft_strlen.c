@@ -6,19 +6,19 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:17:21 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/04 17:25:42 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:17:30 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s == 0)
-		return 0;
+		return (0);
 	while (*s++ != '\0')
 		i++;
 	return (i);

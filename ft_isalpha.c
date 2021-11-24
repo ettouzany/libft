@@ -6,16 +6,16 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 16:28:55 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/04 20:14:37 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:44:09 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-        return 1;
-    else
-        return 0;
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+		return (1);
+	else
+		return (0);
 }
 
 // int main()

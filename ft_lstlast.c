@@ -6,18 +6,17 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 03:28:24 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/23 18:20:23 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:10:07 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    // temp =
-    while (lst && lst->next)
-    {
-        lst = lst->next;
-    }
-    return lst;
+	while (lst && lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
