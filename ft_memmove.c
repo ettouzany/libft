@@ -6,7 +6,7 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:47:15 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/24 18:39:07 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/25 08:06:14 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	s = NULL;
+	s = (char *)src;
 	d = (char *)dst;
 	dist_lenght = 0;
 	src_lenght = 0;
-	while (i < n)
+	if ((size_t)(dst - src) < n && (size_t)(dst - src) > 0)
 	{
-		s[i] = *(char *)(src + i);
-		i++;
+		s = s + n;
+		while (n > 0)
+			d[--n] = *--s;
 	}
 	i = 0;
 	while (i < n)

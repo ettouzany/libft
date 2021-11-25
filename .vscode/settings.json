@@ -13,6 +13,13 @@
     "libft.h": "c",
     "stddef.h": "c",
     "stdlib.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "__split_buffer": "c",
+    "array": "c",
+    "bitset": "c",
+    "initializer_list": "c",
+    "iterator": "c",
+    "utility": "c",
+    "vector": "c"
   }
 }

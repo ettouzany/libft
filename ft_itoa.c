@@ -10,66 +10,59 @@
 /*																			*/
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_numtobyte(int n)
+static int	count(int nb)
 {
-	int	i;
+	int	count;
 
-	i = 1;
-	while (n >= 10)
+	count = 0;
+	if (nb < 1)
 	{
-		n = n / 10;
-		i++;
+		nb *= -1;
+		count++;
 	}
-	return (i);
+	while (nb > 0)
+	{
+		nb /= 10;
+		count++;
+	}
+	return (count);
 }
 
-int	ft_mypow(int numtobyte)
+static void	fill_array(char *array, int n, int len)
 {
-	int	i;
+	int	a;
 
-	i = 1;
-	while (--numtobyte)
+	a = n;
+	if (n < 0)
 	{
-		i *= 10;
+		n *= -1;
 	}
-	return (i);
+	array[len] = '\0';
+	while (len)
+	{
+		array[--len] = (n % 10 + 48);
+		n = n / 10;
+		if (a < 0)
+			array[0] = '-';
+	}
 }
 
 char	*ft_itoa(int n)
 {
-	int		is_negative;
-	int		numtobyte;
-	char	*output;
-	int		i;
-	int		is_maxint;
+	char	*array;
+	int		len;
 
-	is_negative = 0;
-	is_maxint = 0;
-	i = 0;
-	if (n < 0)
-	{
-		is_negative = 1;
-		if (n == -2147483648 && n++)
-			is_maxint = 1;
-		n *= -1;
-		numtobyte = ft_numtobyte(n);
-	}
-	else
-		numtobyte = ft_numtobyte(n);
-	output = malloc(numtobyte + is_negative + 1);
-	if (!output)
+	len = count(n);
+	array = NULL;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	array = malloc(len + 1);
+	if (!array)
 		return (NULL);
-	if (is_negative)
-		output[i++] = '-';
-	while (n >= 10)
-	{
-		output[i++] = n / ft_mypow(numtobyte) + 48;
-		n = n % ft_mypow(numtobyte--);
-	}
-	output[i++] = n % 10 + 48 + is_maxint;
-	output[i] = '\0';
-	return (output);
+	fill_array(array, n, len);
+	return (array);
 }
