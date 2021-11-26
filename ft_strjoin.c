@@ -13,13 +13,13 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*output;
-	size_t	i;
+	char *output;
+	size_t i;
 
 	i = 0;
-	output = malloc(ft_strlen(s1) + ft_strlen(s2));
+	output = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!output)
 		return (NULL);
 	while (*s1)
