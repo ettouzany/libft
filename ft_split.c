@@ -6,7 +6,7 @@
 /*   By: net-touz <net-touz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:52:32 by net-touz          #+#    #+#             */
-/*   Updated: 2021/11/25 14:09:18 by net-touz         ###   ########.fr       */
+/*   Updated: 2021/11/26 05:10:17 by net-touz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,11 @@ char	**ft_split(char const *s, char c)
 		{
 			while (i >= 0)
 				free(output[i--]);
-			free(output);
-			return (NULL);
+			return (free(output), NULL);
 		}
-		ft_strlcpy(output[i++], s, ft_strlen(s) - ft_strlen(ft_strchr(s, c)) + 1);
+		ft_strlcpy(output[i], s, ft_strlen(s) - ft_strlen(ft_strchr(s, c)) + 1);
+		i++;
 		s = ft_strchr(s, c) + 1;
 	}
-	output[i] = (NULL);
-	return (output);
+	return ((output[i] = (NULL)), output);
 }
